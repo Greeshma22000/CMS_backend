@@ -7,11 +7,14 @@ import adminRoutes from "./routes/admin.route.js";
 dotenv.config();
 const app = express();
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 
+// DB connection
 connectDB();
 
+// Routes
 app.use("/api/admin", adminRoutes);
 
 const PORT = process.env.PORT || 5000;
