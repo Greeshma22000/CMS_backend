@@ -27,7 +27,7 @@ export const updateProject = async (req, res) => {
     }
 };
 
-export const deleteAbout = async(req, res) => {
+export const deleteProject = async(req, res) => {
     try {
         await Project.findByIdAndDelete(req.params.id);
         res.json({message: "Deleted"});
