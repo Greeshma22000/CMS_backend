@@ -18,7 +18,7 @@ export const getSkill = async (req, res) => {
     }
 };
 
-export const updateskill = async (req,res) => {
+export const updateSkill = async (req,res) => {
     try {
         const skill = await Skill.findByIdAndUpdate(req.params.id, req.body, {new: true});
         res.json(skill);
