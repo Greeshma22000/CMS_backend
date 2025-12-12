@@ -32,6 +32,6 @@ export const deleteExperience = async (req, res) => {
         await Experience.findByIdAndDelete(req.params.id);
         res.json({message: "Deleted"});
     } catch (error) {
-        res.json(500).json({error: error.message});
+        res.status(500).json({error: error.message});
     }
 };
