@@ -1,7 +1,11 @@
 import Project from "../models/Project.js";
 
 export const createProject = async (req, res) => {
+    const {title, description} =req.body;
     try {
+        if(!title || !description){
+        return res.status(400).json({ message: "Title and description required" });
+    }
         const project = await Project.create(req.body);
         res.json(project);
     } catch (error) {
