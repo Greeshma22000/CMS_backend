@@ -1,7 +1,11 @@
 import Skill from "../models/Skill.js";
 
 export const createSkill = async(req, res) => {
+    const {name, level} = req.body;
     try {
+        if(!name || !level) {
+            return res.status(400).json({message: "All fields are required"});
+        }
         const skill = await Skill.create(req.body);
         res.json(skill);
     } catch (error) {
