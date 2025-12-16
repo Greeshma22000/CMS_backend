@@ -1,9 +1,16 @@
 import mongoose from "mongoose";
 
 const testimonialSchema = new mongoose.Schema({
-    name: String,
-    message: String,
-    image: String,
+    name: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    message: {
+        type: String,
+        required: true,
+        trim: true
+    }
 });
 
 export default mongoose.model("Testimonial", testimonialSchema);
