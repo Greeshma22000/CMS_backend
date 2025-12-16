@@ -1,8 +1,16 @@
 import mongoose from "mongoose";
 
 const aboutSchema = new mongoose.Schema({
-    title: String,
-    description: String,
+    title: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    description: {
+        type: String,
+        required: true,
+        trim: true
+    },
     image: String,
 });
 

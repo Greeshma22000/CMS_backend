@@ -1,10 +1,16 @@
 import mongoose from "mongoose";
 
 const blogSchema = new mongoose.Schema({
-    title: String,
-    content: String,
-    image: String,
-    createdAt: {type: Date, default: Date.now},
+    title: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    content: {
+        type: String,
+        required: true,
+        trim: true
+    }
 });
 
 export default mongoose.model("Blog", blogSchema);
